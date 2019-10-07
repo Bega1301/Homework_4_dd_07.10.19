@@ -9,7 +9,6 @@ public class Main {
     public static int bossAttack = 50;
     public static int[] heroesAttack = {20, 20, 20, 0};// Doctor  не сражается, поэтому сила атаки ноль
 
-
     public static String bossDefenceType = "";
     public static int medicalTreatment = 10;
 
@@ -61,16 +60,9 @@ public class Main {
     }
 
     public static void medicalTreatment() {
-        for (int i = 0; i < heroesHealth.length; i++) {
-            if (heroesHealth[0] > 0 && heroesHealth[1] > 0 && heroesHealth[2] > 0 && heroesHealth[3] > 0 || bossHealth > 0) {
-                heroesHealth[0] = heroesHealth[i] + medicalTreatment;
-                heroesHealth[1] = heroesHealth[i] + medicalTreatment;
-                heroesHealth[2] = heroesHealth[i] + medicalTreatment;
-                heroesHealth[3] = medicalTreatment -medicalTreatment + heroesHealth[3];
-                bossHealth = bossHealth ;
-
-
-
+        for (int i = 0; i <= 2; i++) {
+            if (heroesHealth[i] > 0) {
+                heroesHealth[i] = heroesHealth[i] + medicalTreatment;
             }
         }
     }
@@ -99,7 +91,7 @@ public class Main {
         System.out.println("Magical Health:" + heroesHealth[1]);
         System.out.println("Kinetic Health:" + heroesHealth[2]);
         System.out.println("Medical Health:" + heroesHealth[3]);
-        ; // здоровье доктора
+
         System.out.println("_________________________");
     }
 }
